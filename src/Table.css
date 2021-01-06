@@ -1,0 +1,26 @@
+.table {
+    margin-top: 20px;
+    overflow: scroll;
+    height: 400px;
+    color: #6a5d5d;
+}
+
+.table tr {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 
+Add padding to the data elements in the table
+0.5 rem => 50 % of the root element's padding
+ */
+.table td {
+    padding: 0.5rem;
+}
+
+/* 
+In the table for every odd row change the background color to this
+ */
+.table tr:nth-of-type(odd) {
+    background-color: #f3f2f8;
+}
