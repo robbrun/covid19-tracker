@@ -52,7 +52,6 @@ function App() {
 
           // All of the data from the country response
           setCountryInfo(data);
-          console.log("COUNTRY INFO >>>>", countryInfo);
       });
     };
 
