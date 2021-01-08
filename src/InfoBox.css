@@ -1,0 +1,29 @@
+/* Have each infoBox take up as much room 
+ * as it can betwen each other
+ */
+.infoBox {
+  flex: 1;
+}
+
+/* For all infoBox except last 
+ * add 15px after right margin
+ */
+.infoBox:not(:last-child) {
+  margin-right: 15px;
+}
+
+.infoBox__cases {
+  color: #cc1034;
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+/* !important overriding Material UI rules
+ */
+.infoBox__total {
+  color: #6c757d;
+  font-weight: 700 !important;
+  font-size: 0.8rem !important;
+  margin-top: 15px !important;
+}

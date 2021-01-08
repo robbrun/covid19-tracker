@@ -1,4 +1,5 @@
 import React from 'react'
+import "./InfoBox.css";
 import { Card, CardContent, Typography } from "@material-ui/core";
 
 // destructuring of items that will be listed in each infobox
