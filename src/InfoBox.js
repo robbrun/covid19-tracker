@@ -6,18 +6,20 @@ import { Card, CardContent, Typography } from "@material-ui/core";
  * ...props covers for any other props other than defined, 
  * so onClick would be inside this
  */
-function InfoBox({ title, cases, total, ...props }) {
+function InfoBox({ title, cases, isRed, active, total, ...props }) {
   return (
-    // from material ui, card element:
-    <Card onClick={props.onClick} className="infoBox">
+    /* From material ui, card element:
+     * If active mark 'infoBox--selected' 
+     * If isRed mark active 'infoBox--red'
+     */
+    <Card onClick={props.onClick} className=
+    {`infoBox ${active && "infoBox--selected"} ${isRed && "infoBox--red"}`}>
       <CardContent>
           {/* Title */}
           <Typography className="infoBox__title" color="textSecondary">{title}</Typography>
-
           {/* Number of cases */}
           <h2 className="infoBox__cases">{cases}</h2>
-
-          {/* Total */}
+          {/* Total cases */}
           <Typography className="infoBox__total" color="textSecondary">{total} Total</Typography>
       </CardContent>
     </Card>

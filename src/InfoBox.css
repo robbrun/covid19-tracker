@@ -3,6 +3,7 @@
  */
 .infoBox {
   flex: 1;
+  cursor: pointer;
 }
 
 /* For all infoBox except last 
@@ -10,6 +11,14 @@
  */
 .infoBox:not(:last-child) {
   margin-right: 15px;
+}
+
+.infoBox--selected {
+  border-top: 10px solid greenyellow;
+}
+
+.infoBox--red {
+  border-color: red;
 }
 
 .infoBox__cases {
