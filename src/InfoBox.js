@@ -2,11 +2,14 @@ import React from 'react'
 import "./InfoBox.css";
 import { Card, CardContent, Typography } from "@material-ui/core";
 
-// destructuring of items that will be listed in each infobox
-function InfoBox({ title, cases, total }) {
+/* destructuring of items that will be listed in each infobox
+ * ...props covers for any other props other than defined, 
+ * so onClick would be inside this
+ */
+function InfoBox({ title, cases, total, ...props }) {
   return (
     // from material ui, card element:
-    <Card className="infoBox">
+    <Card onClick={props.onClick} className="infoBox">
       <CardContent>
           {/* Title */}
           <Typography className="infoBox__title" color="textSecondary">{title}</Typography>
