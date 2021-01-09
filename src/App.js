@@ -10,7 +10,7 @@ import "leaflet/dist/leaflet.css";
 
 function App() {
     const [countries, setCountries] = useState([]);
-    const [country, setCountry] = useState(['worldwide']);
+    const [country, setCountry] = useState(["worldwide"]);
     const [countryInfo, setCountryInfo] = useState({});
     const [tableData, setTableData] = useState([]);
     const [mapCenter, setMapCenter] = useState({ lat: 34.80746, lng: -40.4796 });
@@ -59,7 +59,13 @@ function App() {
           setCountry(countryCode);
           // All of the data from the country response
           setCountryInfo(data);
-          setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
+
+          // Fix bug when switching back to worldwide after 
+          // already choosing another country
+          const mapObj = countryCode === "worldwide" 
+          ? { lat: 34.80746, lng: -40.4796} 
+          : {lat: data.countryInfo.lat, lng: data.countryInfo.long};
+          setMapCenter(mapObj);
           setMapZoom(4);
       });
     };
